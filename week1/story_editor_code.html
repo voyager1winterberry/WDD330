@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>story editor</title>
+</head>
+<body>
+
+
+<figure>
+<figcaption><b>Code from week 1 reading</b></figcaption>
+<blockquote>
+<pre>
+<code>
+
+&lthtml>
+    &lthead>
+    &lttitle>
+        Story Writer
+    &lt/title>
+    &ltscript>
+        function loadStory() {
+            var storyName = document.getElementById("name_input").value
+            var storyHTML = localStorage.getItem(storyName)
+            document.getElementById("story_editor").value = storyHTML
+        }
+        function saveStory() {
+            var storyName = document.getElementById("name_input").value
+            var storyHTML = document.getElementById("story_editor").value
+            localStorage.setItem(storyName, storyHTML)
+        }
+        function displayStory() {
+            var storyHTML = document.getElementById("story_editor").value
+            document.getElementById("story_display").innerHTML = storyHTML
+        }
+    &lt/script>
+
+    &ltstyle>
+        textarea {
+            width: 800px;
+            height: 250px;
+            background-color: lightyellow;
+        }
+    &lt/style>
+    &lt/head>
+        
+    &ltbody>
+        &lth1>Story Editor&lt/h1>
+        Story Name: &ltinput id="name_input">&lt/input>
+        &ltsection>
+            &ltbutton onclick="loadStory()">Find and edit it&lt/button>
+            &ltbutton onclick="saveStory()">Save it&lt/button>
+            &ltbutton onclick="displayStory()">Display it&lt/button>
+            &lt/section>
+            &lttextarea id="story_editor" placeholder="Write a totally awesome story here.">&lt/textarea>
+        &ltsection id="story_display">&lt/section>
+    &lt/body>
+&lt/html>
+</code>
+</pre>
+</blockquote>
+</figure>
+</body>
+</html>
