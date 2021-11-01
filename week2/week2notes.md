@@ -99,6 +99,45 @@ mutable. However, you cannot assign a const variable to another object.
 
 ### Scope
 
+Scope refers to where a constant or variable is accessible by the program. Variables declared with 'const' and 'let' are block scoped, meaning their value only exists inside the block they are declared in.
+
+### Global Scope
+
+Variables declared outside of a block have global scope, meaning that the variable can be accessed anywhere in the program. It is not considered good practice, as global variable names can clash with others in the program or libraries.
+
+If variables are declared without 'let' or 'const', then they have global scope, like this:
+
+```JavaScript
+{ c = 5; c; }
+<< 5
+```
+
+### Local Scope
+
+Variables declared with 'const' or 'let' within a block have local scope. Those variables will only be able to be accessed within that same block.
+
+### Naming Constants & Variables
+
+Give unique, sensible names to variables. For example, 'answer' could be better than just 'x'. If you were to look at someone else's code that you need to work with and their variables are just 'x', 'i', 'w', etc., then it will be difficult to work with.
+
+### Direct Assignment and Assignment By Reference
+
+When assigning a primitive value to a variable, this assignment is done directly. Any changes made to that variable are made directly to that value. Example: 
+
+```JavaScript
+const a = 1;
+let b = a; // a = 1, b = 1
+b = 2; // a = 1, b = 2
+```
+
+When assigning a non-primitive value to a variable, this is assignment is done by reference. Thus, any changes made to that variable will effect *all* references to that object. Example: 
+
+```JavaScript
+const c = { value: 1 };
+let d = c; // c.value = 1, d.value = 1
+d.value = 2; // c.value = 2, d.value = 2
+```
+
 ## Strings -- String Literals, String Properties, and Methods
 ## Declaring and Assigning constants and variables
 ## Numbers -- Decimal, Hexademical, Octal, Binary, and Exponent Form, Infinity, and NaN
