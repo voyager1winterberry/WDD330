@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>Good News</title>
+        <link rel="stylesheet" href="project2.css" />
+        <link rel="shortcut icon" type="image/jpg" href="https://static.thenounproject.com/png/6342-200.png" />
+    </head>
+    <body onload="populateGoodNews()">
+        <div id="jokeContainer">
+            <div id="heading">
+                <a id="headingLink" href="project2.html">
+                    <h1>Good News</h1>
+                </a>
+            </div>
+            <div id="intro">
+                <blockquote cite="https://www.goodnewsnetwork.org/more/about-us/"><i>"Thomas Jefferson said the job of journalists 
+                    was to portray accurately what was happening 
+                    in society. GNN was founded because the media 
+                    was failing to report the positive news. In 
+                    the 1990’s while homicide rates in the U.S. 
+                    plummeted by 42 percent, television news 
+                    coverage of murders surged more than 700%, 
+                    according to the Center for Media and Public 
+                    Affairs."</i>
+                </blockquote>
+                <figcaption id="introCaption"><i>--The Good News Network</i></figcaption>
+            </div>
+            <hr id="solid" /> 
+            <div id="newsContainer">
+                List of places to find good news:
+                <ol id="newsList"></ol>
+            </div><br> 
+            <div id="dadJokeNasa">
+                <p id="jokeContentsNasa">
+                    This just in<br>
+                    Nothing tops a plain pizza
+                    <br>-- Dad
+                </p>
+            </div> 
+            <div id="imgContainer">
+                <img src="data:image/jpeg;base64,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"
+            id="dadImage">
+            </div>
+        </div>
+        <div id="bottomNavBar">
+            <a href="project2.html" class="leftNav"><span id="middleHeight">Home</span></a>
+            <a href="project2Nasa.html">NASA<br>Daily<br>Picture</a>
+            <a href="project2GoodNews.html" class="active">Good<br>News</a>
+            <a href="project2MoreJokes.html" id = >More<br>Jokes</a>
+        </div><br><br><br><br>
+        <div id="copyright">
+            &copy 2021 Marcus Hedgecock. All rights reserved. All assets used are either 
+            created by the author or thought to be fair use.
+        </div>
+        <div id="emptySpace"></div>
+    </body>
+    <script src="project2.js" type="text/javascript"></script>
+    <script>
+          
+        console.log('hello')
+        const news = [
+{
+    link: "https://www.google.com/search?q=good+news",
+    desc: "Google search for good news"
+},
+{
+    link: "https://www.goodnewsnetwork.org/",
+    desc: "The Good News Network"
+},
+{
+    link: "https://www.thedad.com/category/news/goodnews/",
+    desc: "Good News section of The Dad, a lifestyle website"
+},
+{
+    link: "https://www.foxnews.com/category/good-news",
+    desc: "The good news section of Fox News"
+},
+{
+    link: "https://www.today.com/news/good-news",
+    desc: "The good news section of Today"
+},
+{
+    link: "https://www.msn.com/en-us/news/good-news",
+    desc: "The good news section of MSN"
+}
+]
+
+console.log(news.length)
+function populateGoodNews() {
+console.log("inside populateGoodNews()")
+for (let i = 0; i < news.length; i++) {
+    const newA = document.createElement("a")
+    const newLi = document.createElement("li")
+    const newOl = document.getElementById("newsList")
+    const newLink = news[i].link
+    console.log("inside populateGoodNews() for loop")
+    const newDesc = document.createTextNode(news[i].desc)
+    newA.appendChild(newDesc)
+    newA.setAttribute("href", newLink)
+    newLi.appendChild(newA)
+    newOl.appendChild(newLi)
+
+}
+}
+    </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>Dad Jokes</title>
+        <link rel="stylesheet" href="project2.css" />
+        <link rel="shortcut icon" type="image/jpg" href="https://www.clipartmax.com/png/middle/31-317045_rocket-ship-rocket-ship-icon-png.png" />
+    <body onload="fetchNasa()">
+        <div id="jokeContainer">
+            <div id="heading">
+                <a id="headingLink" href="project2.html">
+                    <h1>NASA Astronomy Picture of the Day</h1>
+                </a>
+            </div>
+            <div id="nasaContainer">
+                <div id="titleContainer">
+                </div>
+                <div id="imgContainer">
+                    <img id="nasaImg" src="" alt="nasa"/>
+                </div>
+                <div id="dateContainer"></div><br>
+                <div id="explanationContainer"></div><br>
+                <div id="copyrightContainer"></div><br><br><br>
+            </div>
+            </div>
+            <div id="dadJokeNasa">
+                <p id="jokeContentsNasa">
+                    That is out of this world. Thanks NASA.
+                    <br>-- Dad
+                </p>
+            </div> 
+            <div id="imgContainer">
+                <img alt="dad" src="data:image/jpeg;base64,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"
+            id="dadImage">
+            </div>
+        </div>
+        <div id="bottomNavBar">
+            <a href="project2.html" class="leftNav"><span id="middleHeight">Home</span></a>
+            <a href="project2Nasa.html" class="active">NASA<br>Daily<br>Picture</a>
+            <a href="project2GoodNews.html">Good<br>News</a>
+            <a href="project2MoreJokes.html" id = >More<br>Jokes</a>
+        </div><br><br><br><br>
+        <div id="copyright">
+            &copy 2021 Marcus Hedgecock. All rights reserved. All assets used are either 
+            created by the author or thought to be fair use.
+        </div>
+        <div id="emptySpace"></div>
+    </body>
+    <script src="project2.js"></script>
+</html>
