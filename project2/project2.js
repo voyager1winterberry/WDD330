@@ -2,7 +2,7 @@
 Jokes
 */
 async function fetchDadJoke() {
-    const response = await fetch("http://icanhazdadjoke.com", {
+    const response = await fetch("https://icanhazdadjoke.com", {
       headers: {
         Accept: "application/json",
       },
