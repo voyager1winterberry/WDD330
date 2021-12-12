@@ -25,11 +25,19 @@ const links = [
     },
     {
         label: "Week 8",
-        url: "week8/index.html"
+        url: "week8/week8index.html"
     },
     {
         label: "Week 9",
-        url: "week10/index.html"
+        url: "week9/week9index.html"
+    },
+    {
+        label: "Week 10",
+        url: "week10/week10index.html"
+    },
+    {
+        label: "Week 11",
+        url: "week11/week11index.html"
     },
     {
         label: "Block 2 Project",
