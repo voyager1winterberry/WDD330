@@ -37,7 +37,7 @@ const links = [
     },
     {
         label: "project 2",
-        url: "project/project2.html"
+        url: "project2/project2.html"
     }
 ]
 
