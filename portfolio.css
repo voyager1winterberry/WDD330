@@ -1,1 +1,10 @@
+body {
+    background-color: blue;
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    text-align: center;
+}
 
+a {
+    margin: 1px;
+}
