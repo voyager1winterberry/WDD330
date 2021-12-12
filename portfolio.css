@@ -1,10 +1,12 @@
 body {
     background-color: blue;
-    color: white;
+    opacity: 0.5;
     text-shadow: 1px 1px 0 black;
     text-align: center;
 }
 
 a {
     margin: 1px;
+    color: white;
+    opacity: 1;
 }
