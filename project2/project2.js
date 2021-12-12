@@ -1,6 +1,8 @@
 /*
 Jokes
 */
+Access-Control-Allow-Origin;
+
 async function fetchDadJoke() {
     const response = await fetch("//url.to/icanhazdadjoke.com", {
       headers: {
