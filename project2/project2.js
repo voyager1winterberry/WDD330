@@ -1,29 +1,13 @@
-/*
-Jokes
-*/
-Access-Control-Allow-Origin;
-
 async function fetchDadJoke() {
     const response = await fetch("//url.to/icanhazdadjoke.com", {
       headers: {
-        Accept: "application/json",
+        //Accept: "application/json",
       },
     });
   
     const data = await response.json();
     console.log("fetchDadJoke() data is: ", data)
     return data.joke;
-    // data.value.joke most likely
-    // grades:
-    // need event listeners
-    // need local storage
-    // use rubric to figure out grades
-    // meaningful API usage: firebase: meaningful cloud database
-    // username & login, let them save their favorite dad joke. it saves to database.
-    // they can look at past dad jokes. 
-    // another thing:
-    // add users to JSON if firebase isn't working.
-    // another JSON for list of jokes
 }
 
 async function fetchJoke() {
