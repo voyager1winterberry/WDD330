@@ -1,5 +1,5 @@
 async function fetchDadJoke() {
-    const response = await(fetch("https://icanhazdadjoke.com"))
+    const response = await fetch("https://icanhazdadjoke.com", {
     //const response = await fetch("//url.to/icanhazdadjoke.com", {
       headers: {
         Accept: "application/json",
