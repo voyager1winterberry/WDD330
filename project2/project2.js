@@ -1,7 +1,8 @@
 async function fetchDadJoke() {
     const response = await fetch("//url.to/icanhazdadjoke.com", {
       headers: {
-        //Accept: "application/json",
+        Accept: "application/json",
+        Origin: https://icanhazdadjoke.com/;
       },
     });
   
