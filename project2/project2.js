@@ -25,7 +25,7 @@ async function fetchDadJoke() {
 }
 
 async function fetchJoke() {
-    const response = await fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,racist,sexist,explicit", {
+    const response = await fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit", {
         headers: {
             Accept: "application/json",
       },
@@ -34,6 +34,22 @@ async function fetchJoke() {
     const data = await response.json();
     console.log("fetchJoke() joke is: ", data)
     return data;
+}
+
+async function displayJoke() {
+    console.log("inside displayJoke()")
+    const joke = await fetchJoke();
+    console.log("joke received")
+    console.log("setup is ", joke.setup)
+    console.log("delivery is ", joke.delivery)
+    console.log("joke is ", joke.joke)
+    if (joke.joke !== undefined) {
+        document.getElementById("jokeContents").innerHTML = joke.joke
+    }
+    else {
+        document.getElementById("jokeContents").innerHTML = joke.setup + ` ` + joke.delivery
+        // document.getElementById("jokeContents2").innerHTML = joke.delivery
+    }
 }
 
 async function displayDadJoke() {
@@ -45,18 +61,8 @@ async function displayDadJoke() {
     document.getElementById("dadImage").src=dadImageSource2
 }
 
-async function displayNormalJoke() {
-    const joke = fetchJoke()
-    console.log("displayNormalJoke data is", joke)
-    document.getElementById("jokeContents").innerHTML = joke
-}
-
 document.getElementById("getDadJokeBtn").addEventListener("click", displayDadJoke)
-document.getElementById("getJokeBtn").addEventListener("click", displayNormalJoke)
-
-/*
-end of jokes, beginning of NASA
-*/
+document.getElementById("getJokeBtn").addEventListener("click", displayJoke)
 
 async function fetchNasa() {
     const response = await fetch("https://api.nasa.gov/planetary/apod?api_key=lI1ZQacmoSHllSZva3T93BkPxNOtyPc5C80EfWdh", {
@@ -87,4 +93,5 @@ async function fetchNasa() {
         document.getElementById("copyrightContainer").innerHTML = `Copyright:<br>${data.copyright}`
     }
 }
+
 

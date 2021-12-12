@@ -48,7 +48,7 @@ button {
 #bottomNavBar {
     position: fixed;
     height: auto;
-    width:75%;
+    width:70vh;
     background-color: #5EFC58;
     bottom: 0;
     border-radius: 25px;
@@ -285,4 +285,32 @@ img {
 
 #solid {
     border-top: 5px solid #D1FC58;
+}
+
+#newsContainer {
+    font-family: Helvetica, Arial, sans-serif;
+    position: relative;
+    color: #F2EF55;
+    text-shadow: 0.75px 0.75px 0 black,
+                    0.75px -0.75px 0 black,
+                    -0.75px 0.75px 0 black,
+                    -0.75px -0.75px 0 black;
+    font-weight: 1000;
+    text-decoration: none;
+}
+
+#newsList {
+    font-family: Helvetica, Arial, sans-serif;
+    position: relative;
+    color: #F2EF55;
+    text-shadow: 0.75px 0.75px 0 black,
+                    0.75px -0.75px 0 black,
+                    -0.75px 0.75px 0 black,
+                    -0.75px -0.75px 0 black;
+    font-weight: 1000;
+    text-decoration: none;
+}
+
+#jokeContainer {
+    text-decoration: none;
 }

@@ -139,9 +139,311 @@ d.value = 2; // c.value = 2, d.value = 2
 ```
 
 ## Strings -- String Literals, String Properties, and Methods
+
+String: A collection of characters, such as letters and symbols.
+String literal: inside quotes.
+string object:
+```JavaScript
+new String("hello")
+```
+String objects are the same as string literals but will be classed as an object, not a primitive.
+Single quotes inside double quotes works.
+The escape character is \
+#### String properties and methods:
+properties = information about object
+methods = an action done on the object or value
+example of property: length
+```JavaScript
+name.length
+// OR
+name['length']
+```
+example of method: toUpperCase
+```JavaScript
+name.toUpperCase()
+```
+Template literals use the ` character. With template literals, javascript expressions can be placed within ${}.
+#### Symbols
+Symbols are newer primitive values. They can help create unique values, to avoid any naming collisions. They do not have a literal form and must be created with the Symbol() function:
+```JavaScript
+const uniqueID = Symbol();
+```
+A description of the symbol is recommended:
+```JavaScript
+const uniqueID = Symbol('This is a unique ID');
+```
+Two variables can point to same symbol with for() method.
+```JavaScript
+const A = Symbol.for('shared symbol');
+const B = Symbol.for('shared symbol');
+```
+
 ## Declaring and Assigning constants and variables
 ## Numbers -- Decimal, Hexademical, Octal, Binary, and Exponent Form, Infinity, and NaN
-## Arithmetic Operations such as +, -, *, /, and %
-## Undefined and Null
-## Booleans -- Truthy and Falsy Values
-## Logical Operators -- AND, OR, and NOT
+
+numbers can be integers or floating point numbers. JavaScript doesn't distinguish between the two. However, isInter() can check if it is an integer.
+
+#### octal, hexadecimal
+If starting with 0x, it is hexadecimal (base 16).
+If starting with 0o, it is octal (base 8).
+If starting with 0b, it is binary (base 2).
+
+#### exponential notation/scientific notation
+example:
+```JavaScript
+1e6 // means 1 multiplied by 10 to the power of 6
+<< 1000000
+2E3 // 2 multiplied by 10^3
+<< 2000
+2.5e-3 // means 2.5 multiplied by 10 to the power of 3
+<< 0.0025
+```
+
+#### Number Methods
+Integers will need a space, dot, writing the number in parenthesis, assigning the number to a constant, or writing the number as a float to use a method.
+
+## Logical Operators
+AND -> &&
+OR -> ||
+NOT -> !
+Bitwise Operators work with operands that are 32-bit integers.
+Bitwise NOT -> ~
+Bitwise AND -> &
+Bitwise OR -> |
+Bitwise XOR -> ^
+Bitwise shift -> << and >>
+
+#### Equality
+Equality: =
+Soft Equality: == 
+Hard Equality: ===
+Hard equality not only checks for equality but also tests to see if both are of the same data type.
+
+# Arrays, Logic, and Loops
+
+## Arrays
+Array: ordered list of values. To make a literal:
+```JavaScript
+const myArray = [];
+```
+A constructor function can also be used, but literals are generally preferable.
+To discover a value, we write its position in the square brackets:
+```JavaScript
+myArray[0]
+```
+Adding Values:
+```JavaScript
+heroes[0] = 'Superman';
+```
+More values can be added by assigning them to other indices.
+Typing the name of the array into the console prints out its contents.
+
+#### Array literals
+Array literals can be created like so:
+```JavaScript
+const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];
+<< ['Captain America', 'Iron Man', 'Thor', 'Hulk']
+```
+Arrays can hold a variety of data types.
+Delete will remove an item from an array. This will leave 'undefined'.
+
+#### Destructuring arrays
+```JavaScript
+const [x,y] = [1,2];
+```
+x and y will also exist outside the array.
+
+## Array properties and methods
+properties accessed with dot notation.
+Methods accessed with dot and parenthesis.
+Index of arrays start with 0.
+
+#### pop, push, shift, unshift
+Pop method returns the last item of the array, with the array no longer containing it.
+Push method appends a new value to end of array.
+Shift method, similar to pop, removes first item in array.
+unshift method, similar to push, appends a new item to the beginning of the array.
+
+#### slice and splice
+These methods allow taking chunks out of arrays.
+
+#### sorting, reversing
+reverse() reverses the order of array.
+sort() sorts alphabetically by default.
+
+#### multidimensional
+Arrays can be multidimensional and have two indices.
+
+#### Sets
+Sets are data structures that represent a collection of unique values, so it cannot have duplicates. Any duplicates will not make it into the set, as they will be eliminated. non-primitive values are considered unique, so this appears to allow duplicate values. Sets can be strong or weak.
+
+#### Map
+Similar to objects, they have some differences:
+Objects are limited to strings for key values. Maps are not.
+Maps can use 'size' to efficiently find the number of key value pairs. Objects are not efficient in this.
+Objects can be accessed directly & maps require using get().
+
+## Logic
+```JavaScript
+if (condition) {
+// code to run if condition is true
+}
+```
+#### else
+```JavaScript
+if (condition) {
+// code to run if condition is true
+} else {
+// code to run if condition is false
+}
+```
+#### Ternary Operator
+This is a shorthand version of if else.
+```JavaScript
+condition ? (//code to run if condition is true) : (//code to run if condition is false)
+```
+#### switch
+```JavaScript
+switch (number) {
+    case 4: // if number is a 4
+    console.log('You rolled a four');
+    break;
+    case 5: // if its a 5
+    console.log('You rolled a five');
+    break;
+    case 6: // so on
+    console.log('You rolled a six');
+    break;
+    default:
+    console.log('You rolled a number less than four');
+    break;
+}
+```
+
+#### loops
+while loop:
+```JavaScript
+while (condition) {
+// do something
+}
+```
+Do While Loop:
+```JavaScript
+do {
+    do something
+} while(condition)
+```
+For Loops:
+```JavaScript
+for (initialization ; condition ; after) { do something }
+```
+Looping over arrays:
+```JavaScript
+for(let i=0, max=avengers.length; i < max; i++){
+console.log(avengers[i]);
+}
+<< 'Black Widow'
+<< 'Captain America'
+<< 'Hawkeye'
+<< 'Iron Man'
+<< 'Quicksilver'
+<< 'Scarlet Witch'
+```
+Looping over sets:
+```JavaScript
+for(const letter of letters) {
+    console.log(letter);
+}
+<< h
+e
+l
+o
+```
+Looping over maps
+```JavaScript
+for(const key of romanNumerals.keys()) {
+    console.log(key);
+}
+<< 1
+2
+3
+4
+5
+```
+
+# Functions
+
+A block of code that can be referenced by name, and is kind of like a self-contained, small program.
+In JavaScript, functions are 'first-class objects'. This means they behave the same as all other primitive data types and objects in the language. They can be assigned to variables, stored in arrays, and be returned by other functions.
+
+## Defining a function
+
+There are a number of ways to define a function
+
+#### Function declarations
+
+Function literal: we can use a function declaration (this is known as a named function):
+```JavaScript
+function hello(){
+    console.log('Hello World!');
+}
+```
+
+Function expressions: This assigns an anonymous function to a variable. You can also name the function if desired.
+```JavaScript
+const goodbye = function(){
+    console.log('Goodbye World!');
+};
+```
+Function constructors: Functions can also be declared using the constructor ```Function()```. These are not recommended. The body of the function is entered as a string, as is such in this example:
+```JavaScript
+const hi = new Function('console.log("Hi World!");');
+```
+
+## Invoking a function
+
+Invoking a function is to run the code inside the function's body. Invoke a function like so:
+```JavaScript
+hello();
+<< 'Hello world!'
+```
+The function can be invoked over and over, and there is no need to re-write the code.
+
+If you have assigned a function to a variable, you need to place parenthesis after the variable to invoke it as a function. If you skip the parenthesis, you are referencing it rather than invoking it. However, this can be useful if you are assigning the variable to another variable.
+```JavaScript
+goodbye();
+<< 'Goodbye World!'
+```
+
+## Return values
+
+All functions can return a value, which can be specified with the ```return``` keyword. A function without a return value will return ```undefined``` by default.
+```JavaScript
+function howdy(){
+    return 'Howdy World!';
+}
+```
+Now that we are returning a value, we can assign this function to a variable, like so:
+```JavaScript
+const message = howdy();
+<< 'Howdy World!'
+```
+The variable ```message``` now points to the return value of the ```howdy()``` function, which is the string 'Howdy World!'
+
+## Parameters and arguments
+
+Parameters and arguments are words that are often used interchangeably. 
+They are the values provided for the function as an input. 
+There is a difference between the two though: Any parameters a function needs are set when the function is defined. When a function is invoked, it is provided with arguments.
+
+In this case, the parameter is ```x```:
+```JavaScript
+function square(x){
+    return x*x;
+}
+```
+
+## Callbacks
+
+
+## Array iterators
