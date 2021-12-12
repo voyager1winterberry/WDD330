@@ -1,15 +1,22 @@
 body {
     background-color: blue;
-    opacity: 0.5;
     text-align: center;
-}
-
-a {
-    margin: 5px;
-    color: white;
-    opacity: 1;
+    width: 100vh;
+    height: 100vh;
 }
 
 h2 {
+    color: white;
     text-shadow: 1px 1px 0 black;
+}
+
+a {
+    display: inline-block;
+    padding: 5px;
+}
+
+#itemContainer {
+    background-color: white;
+    left: 5vh;
+    right: 5vh;
 }
