@@ -445,5 +445,16 @@ function square(x){
 
 ## Callbacks
 
+A callback is a function that is passed as an argument to another. Example:
+```JavaScript
+function sing(song, callback) {
+    console.log(`I'm singing along to ${song}`);
+}
+
+sing('Let It Go')
+<< 'I'm singing along to Let It Go'
+```
 
 ## Array iterators
+
+forEach(), map(), reduce(), filter() are functions that can iterate through an array.
