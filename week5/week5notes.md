@@ -90,4 +90,4 @@ The workflow is as follows:
 4. test refactored code
 5. write more tests for new features
 
-Test-driven development is considered to be best practice. However, it often isn't always used.
+Test-driven development is considered to be best practice. However, it isn't always used.
